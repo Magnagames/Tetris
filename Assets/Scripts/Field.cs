@@ -3,8 +3,11 @@ using System.Collections;
 
 public class Field{
 
-	private static readonly int ROW_COUNT = 10;
-	private static readonly int COLUMN_COUNT = 35;
+	public enum BLOCKTYPE{
+		NONE = 0,
+		WALL = 1
+	}
+
 	private int[,] mFieldCell = new int[,] {
 		{ 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
@@ -35,6 +38,17 @@ public class Field{
 
 	public int[,] GetField(){
 		return mFieldCell;
+	}
+
+	public int GetCellNumber(int i, int j){
+		return mFieldCell [i, j];
+	}
+
+	public int GetRowCount{
+		get{ return mFieldCell.GetLength (0); }
+	}
+	public int GetColumnCount{
+		get{ return mFieldCell.GetLength (1);}
 	}
 
 }

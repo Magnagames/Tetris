@@ -2,14 +2,9 @@
 using System.Collections;
 
 public class WallFactory : MonoBehaviour {
+	public GameObject WallPrefab;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public void CreateWall(Vector3 pos){
+		var wall = GameObject.Instantiate (WallPrefab, pos, Quaternion.identity) as GameObject;
 	}
 }
