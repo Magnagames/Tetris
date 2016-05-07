@@ -25,7 +25,7 @@ public class TetriminoFactory : MonoBehaviour {
 		var tetParent = GameObject.Instantiate (tetriminoParentPrefab, basePos, Quaternion.identity) as GameObject;
 		for(int i =0; i< tetArray.GetLength(0); i++){
 			for(int j= 0; j < tetArray.GetLength(1); j++){
-				Debug.Log (tetArray [i, j]);
+				//Debug.Log (tetArray [i, j]);
 				if (tetArray [i, j] == 2) {
 					var tetrimino = GameObject.Instantiate (TetriminoPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
 					tetrimino.transform.SetParent (tetParent.transform);
