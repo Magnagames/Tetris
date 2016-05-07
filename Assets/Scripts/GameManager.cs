@@ -4,11 +4,18 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	private Field field;
 	public WallFactory wallFactory;
+	public TetriminoFactory tetriminoFactory;
+	public Vector3 startPos;
 	// Use this for initialization
 	void Start () {
 		field = new Field ();
 		Debug.Log ("テトリスフィールドは" + field.GetRowCount + ", " + field.GetColumnCount);
 		createFields ();
+		startPos = new Vector3 (0, field.GetRowCount, field.GetColumnCount / 2);
+
+		StartCoroutine ("create");
+
+
 	}
 
 	// Update is called once per frame
@@ -25,6 +32,13 @@ public class GameManager : MonoBehaviour {
 					wallFactory.CreateWall (pos);
 				}
 			}
+		}
+	}
+
+	private IEnumerator create(){
+		while (true) {
+			yield return new WaitForSeconds (1.0f);
+			tetriminoFactory.CreateTetrimino(startPos);
 		}
 	}
 }
