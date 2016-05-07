@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Tetrimino : MonoBehaviour {
 
-	private GameManager mGameManager;
 	private bool mStopFlag = false;
 	//private float mPhaseTimer = 0f;
 	private int mCurrentTet;
